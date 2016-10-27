@@ -11,7 +11,7 @@ public class Money : MonoBehaviour {
 
 	public void SetSeedText(){
 
-		seedCount.text = "Seeds: " + money.ToString ();
+		seedCount.text = /*"Seeds: " +*/ money.ToString ();
 
 	}
 
