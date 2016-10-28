@@ -5,5 +5,4 @@ public class TileTaken : MonoBehaviour {
 
 	public bool isTaken;
 	public GameObject Tower;
-
 }

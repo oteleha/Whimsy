@@ -22,18 +22,6 @@ public class TowerPoison : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		//towerTypes [Random.Range (0, towerTypes.Length)];
-
-
-//		if(attackTimer <= 0f){
-//			
-//			attackTimer = 1f;
-//		}
-//
-//		if (attackTimer > 0f) {
-//
-//			attackTimer -= Time.deltaTime;
-//		}
 
 	}
 

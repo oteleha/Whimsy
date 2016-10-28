@@ -8,11 +8,9 @@ public class Money : MonoBehaviour {
 	public Text seedCount;
 
 
-
 	public void SetSeedText(){
 
 		seedCount.text = /*"Seeds: " +*/ money.ToString ();
 
 	}
-
 }

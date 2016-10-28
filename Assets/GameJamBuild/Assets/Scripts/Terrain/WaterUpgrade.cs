@@ -19,25 +19,26 @@ public class WaterUpgrade : MonoBehaviour {
 	 
 	void Update () {
 
-		if (tile.GetComponent<TileTaken> ().isTaken == true) {
-
-			if (tower.tag == "TowerPoison") {
-
-				tower.GetComponent<TowerPoison> ().enemy.TakeDamage (25);
-
-			}
-
-			if (tower.tag == "TowerVenus") {
-
-				tower.GetComponent<TowerVenus> ().enemy.TakeDamage (20);
-
-			}
-
-			if (tower.tag == "TowerDandelion") {
-
-				tower.GetComponent<BulletScript> ().target.GetComponent<Enemy>().TakeDamage(5);
-
-			}
-		} 
+		if (tile.GetComponent<TileTaken> ().isTaken == true && tower.tag =="TowerPoison") {
+			Debug.Log ("isTaken is true");
+//			if (tower.tag == "TowerPoison") {
+				Debug.Log ("Tower Upgraded!");
+			tower.GetComponent<TowerPoison> ().enemy.TakeDamage (25);
+//
+//			}
+//
+//			if (tower.tag == "TowerVenus") {
+//				Debug.Log ("Tower Upgraded!");
+//				tower.GetComponent<TowerVenus> ().enemy.TakeDamage (20);
+//
+//			}
+//
+//			if (tower.tag == "TowerDandelion") {
+//				Debug.Log ("Tower Upgraded!");
+//				tower.GetComponent<BulletScript> ().target.GetComponent<Enemy> ().TakeDamage (10);
+//
+//			}
+//		}
+		}
 	}
 }

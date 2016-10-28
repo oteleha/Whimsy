@@ -11,8 +11,6 @@ public class MouseController : MonoBehaviour {
 	public GameObject[] towers; // array that holds the types of towers that can be put down
 	public int[] prices;//the price that you must pay in money to place the tower
 	public GameObject tile;//the placeholder where the tower can be placed
-	private Money money;//reference to money script
-	private TileTaken tileTaken;//calls the script attached to each tile and determines whether there is a tower already placed there
 	public int currentSeedCount;//updates how many seeds the player can spend after a tower has been placed
 	public Transform manager;//reference to the manager script
 	public AudioClip[] clips;
@@ -20,8 +18,10 @@ public class MouseController : MonoBehaviour {
 	public AudioSource source;
 	public GameObject[] mushTowers;
 	public int mushIndex;
-	private AudioClip levelMusic;
 
+	private AudioClip levelMusic;
+	private Money money;//reference to money script
+	private TileTaken tileTaken;//calls the script attached to each tile and determines whether there is a tower already placed there
 
 	void Start(){
 
@@ -76,8 +76,6 @@ public class MouseController : MonoBehaviour {
 					source.clip = clips[Selected];
 					source.Play ();
 			}
-
-			//if((tile.GetComponent<TileTaken>().isTaken == true) && tileTaken.Tower 
 		}
 	}
 }
