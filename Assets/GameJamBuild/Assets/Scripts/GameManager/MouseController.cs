@@ -21,7 +21,7 @@ public class MouseController : MonoBehaviour {
 
 	private AudioClip levelMusic;
 	private Money money;//reference to money script
-	private TileTaken tileTaken;//calls the script attached to each tile and determines whether there is a tower already placed there
+	public TileTaken tileTaken;//calls the script attached to each tile and determines whether there is a tower already placed there
 
 	void Start(){
 

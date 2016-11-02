@@ -32,7 +32,7 @@ public class TowerPoison : MonoBehaviour {
 			enemy = other.GetComponent<Enemy> ();
 			Debug.Log ("hit collider");
 
-			enemy.TakeDamage (20);
+			enemy.TakeDamage (10);
 			//attackTimer = 0f;
 			particle.Play ();
 

@@ -11,7 +11,7 @@ public class EnemyWaves : MonoBehaviour {
 	public Text timer;
 	public Transform spawnPoint;
 	public GameObject gridTiles;
-	public int waveNumber;
+	//public int waveNumber;
 	public Text waveText;
 
 	public GameObject instance;
@@ -69,7 +69,7 @@ public class EnemyWaves : MonoBehaviour {
 		gridTiles.SetActive (false);
 		playImage.enabled = false;
 		Spawn (5);
-		waveNumber = 1;
+		SetWaveText (1);
 
 	}
 	public void OnClick(){
@@ -84,9 +84,9 @@ public class EnemyWaves : MonoBehaviour {
 //
 //	}
 
-	public void SetWaveText(){
+	public void SetWaveText(int waveNumber){
 
-		//waveText.text = waveNumber.ToString + "/4" ();
+		waveText.text = waveNumber.ToString() + "/4";
 
 	}
 }
