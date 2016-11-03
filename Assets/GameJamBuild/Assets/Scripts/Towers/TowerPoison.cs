@@ -9,7 +9,10 @@ public class TowerPoison : MonoBehaviour {
 	public int mushIndex;
 	public ParticleSystem particle;
 	public GameObject temp;
-
+	public WaterUpgrade waterUpgrade;
+	public MouseController mouseController;
+	public GameObject tile;
+	public GameObject gameManager;
 
 	// Use this for initialization
 	void Start () {
@@ -17,25 +20,32 @@ public class TowerPoison : MonoBehaviour {
 		//enemy = GetComponent<Enemy> ();
 		particle = gameObject.GetComponent<ParticleSystem> ();
 		//particle.Stop ();
+		waterUpgrade = tile.GetComponent<WaterUpgrade>();
+		mouseController = gameManager.GetComponent<MouseController> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+		tile = waterUpgrade.tile;
 
 	}
 
 	void OnTriggerEnter(Collider other){
 
-		if (other.gameObject.tag == ("Enemy")){// && attackTimer <= 0f){
-
+		if (other.gameObject.tag == ("Enemy")) {
+			
 			enemy = other.GetComponent<Enemy> ();
 			Debug.Log ("hit collider");
 
 			enemy.TakeDamage (10);
-			//attackTimer = 0f;
 			particle.Play ();
+			if (waterUpgrade.upgraded == true) {
 
+				Debug.Log ("Tower Upgraded!!!!");
+				enemy.TakeDamage (15);
+
+			}
 		}
 	}
 

@@ -10,31 +10,31 @@ public class EnemyWaves : MonoBehaviour {
 	public float timeLeft = 50.0f;
 	public Text timer;
 	public Transform spawnPoint;
-	public GameObject gridTiles;
-	//public int waveNumber;
+	public GameObject tileHolder;
 	public Text waveText;
 
 	public GameObject instance;
 	public Transform enemySpawn;
 	public GameObject enemyPrefab;
 	public GameObject destination;
+//	public SpriteRenderer[] tileRenderers;
 
 	public EnemyWaves enemyWaves;
 
-	// Use this for initialization
 	void Start () {
 
-		//enemySpawn = GetComponent<EnemySpawn> ();
 		playImage = play.GetComponentInChildren<Image> ();
-		gridTiles.SetActive (true);
+//		gridTiles.SetActive (true);
+		SpriteRenderer[] tileRenderers = GetComponentInChildren<SpriteRenderer>();
+		foreach (SpriteRenderer rend in tileRenderers) {
 
+			rend.enabled = true;
+		}
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 
-//		timeLeft -= Time.deltaTime;
-//		timer.text = "Timer:" + Mathf.RoundToInt (timeLeft);//#Livisabeautifulbutterfly
+		//#Livisabeautifulbutterfly
 		//#fuckUnity
 		//#damnStraight
 		//LivperformsOralWell YESSSSSS
@@ -63,26 +63,26 @@ public class EnemyWaves : MonoBehaviour {
 //
 //	}
 
-	public void TimerEnd(){
+	public void WaveStart(){
 			
 //		timeLeft = 0;
-		gridTiles.SetActive (false);
+//		gridTiles.SetActive (false);
+		SpriteRenderer[] tileRenderers = GetComponentInChildren<SpriteRenderer>();
+		foreach (SpriteRenderer rend in tileRenderers) {
+
+			rend.enabled = true;
+		}
+
 		playImage.enabled = false;
 		Spawn (5);
 		SetWaveText (1);
 
 	}
+
 	public void OnClick(){
 		
-		TimerEnd ();
+		WaveStart ();
 	}
-//
-//	public void SetTimerText(){
-//
-//
-//		timer.text = "Timer:" + timeLeft.ToString();
-//
-//	}
 
 	public void SetWaveText(int waveNumber){
 
