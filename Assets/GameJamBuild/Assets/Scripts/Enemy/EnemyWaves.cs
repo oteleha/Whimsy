@@ -7,9 +7,6 @@ public class EnemyWaves : MonoBehaviour {
 
 	public Button play;
 	public Image playImage;
-	public float timeLeft = 50.0f;
-	public Text timer;
-	public Transform spawnPoint;
 	public GameObject tileHolder;
 	public Text waveText;
 
@@ -19,13 +16,13 @@ public class EnemyWaves : MonoBehaviour {
 	public GameObject destination;
 //	public SpriteRenderer[] tileRenderers;
 
-	public EnemyWaves enemyWaves;
+//	public EnemyWaves enemyWaves;
 
 	void Start () {
 
 		playImage = play.GetComponentInChildren<Image> ();
 //		gridTiles.SetActive (true);
-		SpriteRenderer[] tileRenderers = GetComponentInChildren<SpriteRenderer>();
+		SpriteRenderer[] tileRenderers = tileHolder.GetComponentsInChildren<SpriteRenderer>();
 		foreach (SpriteRenderer rend in tileRenderers) {
 
 			rend.enabled = true;
@@ -67,10 +64,10 @@ public class EnemyWaves : MonoBehaviour {
 			
 //		timeLeft = 0;
 //		gridTiles.SetActive (false);
-		SpriteRenderer[] tileRenderers = GetComponentInChildren<SpriteRenderer>();
+		SpriteRenderer[] tileRenderers = tileHolder.GetComponentsInChildren<SpriteRenderer>();
 		foreach (SpriteRenderer rend in tileRenderers) {
 
-			rend.enabled = true;
+			rend.enabled = false;
 		}
 
 		playImage.enabled = false;

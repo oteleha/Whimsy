@@ -5,12 +5,13 @@ using UnityEngine.EventSystems;
 
 public class TowerSpawn : MonoBehaviour {
 
-	public int Index;//indicates which index number the tower has been assigned Element 0,1, or 2
+	public int index;//indicates which index number the tower has been assigned Element 0,1, or 2
 	public GameObject spawnTower;//reference to the mousecontroller script
 	//public GameObject mushTower;
 	public TowerPoison randomTower;
 	public int mushIndex;
 	public GameObject temp;
+	public GameObject tile;
 
 	void Start(){
 
@@ -20,7 +21,13 @@ public class TowerSpawn : MonoBehaviour {
 
 	public void OnClick(){
 		
-		spawnTower.GetComponent<MouseController>().Selected = Index;
+		spawnTower.GetComponent<MouseController>().Selected = index;
 	
+	}
+
+	void Update(){
+
+		tile = spawnTower.GetComponent<MouseController> ().tile;
+
 	}
 }

@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 0733ef5490b024a0e8df99daf949d0fc
-timeCreated: 1476760189
+timeCreated: 1478746971
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - tower: {instanceID: 0}
+  - tile: {fileID: 184548, guid: eb2b4df555d1d47c690125f62fdce7bf, type: 2}
+  - gameManager: {fileID: 171356, guid: 9bd17c048e5bd441da7fca0cb5a125de, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

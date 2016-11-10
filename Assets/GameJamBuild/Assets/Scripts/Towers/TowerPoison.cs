@@ -4,30 +4,30 @@ using System.Collections;
 public class TowerPoison : MonoBehaviour {
 
 	public Enemy enemy;
-//	float attackTimer = 0.0f;
-	public GameObject[] towerTypes;
+//	public GameObject[] towerTypes;
 	public int mushIndex;
 	public ParticleSystem particle;
 	public GameObject temp;
 	public WaterUpgrade waterUpgrade;
 	public MouseController mouseController;
+	public TowerSpawn towerSpawn;
 	public GameObject tile;
 	public GameObject gameManager;
 
-	// Use this for initialization
 	void Start () {
 	
-		//enemy = GetComponent<Enemy> ();
 		particle = gameObject.GetComponent<ParticleSystem> ();
-		//particle.Stop ();
 		waterUpgrade = tile.GetComponent<WaterUpgrade>();
 		mouseController = gameManager.GetComponent<MouseController> ();
+		towerSpawn = gameManager.GetComponent<TowerSpawn> ();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
-		tile = waterUpgrade.tile;
+
+			tile = towerSpawn.tile;
+
+
 
 	}
 
@@ -40,6 +40,7 @@ public class TowerPoison : MonoBehaviour {
 
 			enemy.TakeDamage (10);
 			particle.Play ();
+
 			if (waterUpgrade.upgraded == true) {
 
 				Debug.Log ("Tower Upgraded!!!!");
