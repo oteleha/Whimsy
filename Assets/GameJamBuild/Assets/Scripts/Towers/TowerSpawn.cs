@@ -4,12 +4,13 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class TowerSpawn : MonoBehaviour {
-
-	public int index;//indicates which index number the tower has been assigned Element 0,1, or 2
-	public GameObject spawnTower;//reference to the mousecontroller script
-	//public GameObject mushTower;
-	public TowerPoison randomTower;
+	
 	public int mushIndex;
+	public int index;//indicates which index number the tower has been assigned Element 0,1, or 2
+
+	public TowerPoison randomTower;
+
+	public GameObject spawnTower;//reference to the mousecontroller script
 	public GameObject temp;
 	public GameObject tile;
 

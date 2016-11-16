@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-	public int initialHealth = 20;//states the initial health of the enemy
+	public int initialHealth = 2000;//states the initial health of the enemy
 	public GameObject destination;//identifies the nav mesh's destination
 	public GameObject prefab;//enemy prefab
 	NavMeshAgent agent;//references the navMeshAgent
@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour {
 
 		agent = GetComponent<NavMeshAgent> ();
 		currentHealth = initialHealth;
+		agent.SetDestination (destination.transform.position);
 		//prefab = GetComponent<EnemySpawn> ().instance;
 
 	}
@@ -20,7 +21,7 @@ public class Enemy : MonoBehaviour {
 	void Update () 
 	{
 
-		agent.SetDestination (destination.transform.position);
+
 
 	}
 

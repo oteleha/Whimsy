@@ -7,13 +7,13 @@ public class EnemyWaves : MonoBehaviour {
 
 	public Button play;
 	public Image playImage;
-	public GameObject tileHolder;
 	public Text waveText;
+	public Transform enemySpawn;
 
 	public GameObject instance;
-	public Transform enemySpawn;
 	public GameObject enemyPrefab;
 	public GameObject destination;
+	public GameObject tileHolder;
 //	public SpriteRenderer[] tileRenderers;
 
 //	public EnemyWaves enemyWaves;
@@ -34,7 +34,7 @@ public class EnemyWaves : MonoBehaviour {
 		//#Livisabeautifulbutterfly
 		//#fuckUnity
 		//#damnStraight
-		//LivperformsOralWell YESSSSSS
+		//LivPerformsOralWell YESSSSSS
 	}
 
 	public void Spawn(int amount){
@@ -50,15 +50,15 @@ public class EnemyWaves : MonoBehaviour {
 		}
 	}
 
-//	void NextWave(){
-//
-//		if (!instance.activeInHierarchy) {
-//
-//			Invoke ("Spawn", 5f);
-//
-//		}
-//
-//	}
+	void NextWave(){
+
+		if (!instance.activeInHierarchy) {
+
+			Invoke ("Spawn", 5f);
+
+		}
+
+	}
 
 	public void WaveStart(){
 			
@@ -71,7 +71,7 @@ public class EnemyWaves : MonoBehaviour {
 		}
 
 		playImage.enabled = false;
-		Spawn (5);
+		Spawn (1);
 		SetWaveText (1);
 
 	}
